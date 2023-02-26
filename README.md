@@ -1,4 +1,4 @@
-# TODO List with React
+# To-Do List App with React
 
 # Getting Started with Create React App
 
