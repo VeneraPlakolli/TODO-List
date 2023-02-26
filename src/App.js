@@ -14,8 +14,16 @@ const TODO_LIST = [
     text: 'Watch a React tutorial'
   },
   {
-    id:3,
+    id: 3,
     text: 'Create a portfolio site'
+  },
+  {
+    id: 4,
+    text: 'Go to lectures'
+  },
+  {
+    id: 5,
+    text: 'Go out with friends'
   }
 ];
 
@@ -33,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <TodoForm />
+      <TodoForm onAddTodo={addTodoHandler} />
       <Todo todo={todo} />
     </div>
   );
