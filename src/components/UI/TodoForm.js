@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import image from '../../assets/add-icon.png';
+import image2 from '../../assets/todo-icon.png';
 import styles from './TodoForm.module.css';
 
 const TodoForm = (props) => {
@@ -23,9 +24,13 @@ const TodoForm = (props) => {
     return (
         <React.Fragment>
             <form onSubmit={submitFormHandler}>
+                <div className={`${styles['form-title']}`}>
+                    <img src={image2} alt="todo-icon" />
+                    <label>Todo App</label>
+                </div>
                 <div className={`${styles['form-content']}`}>
                     <input type='text' onChange={inputTodoHandler} value={enteredText} placeholder="Add your new todo"></input>
-                    <button className={`${styles.icon}`}><img src={image} /></button>
+                    <button className={`${styles.icon}`}><img src={image} alt="add-icon" /></button>
                 </div>
             </form>
         </React.Fragment>

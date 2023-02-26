@@ -9,9 +9,10 @@ const Todo = (props) => {
         <ul className={`${styles.todo}`}>
             { props.todo.map((todo) => (
                 <TodoItem 
-                    key={todo.id}
+                    key={Math.random()}
                     id={todo.id}
                     text={todo.text}
+                    deleteTodo={props.onDeleteTodo}
                 />
             ))
             }

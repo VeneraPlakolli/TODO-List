@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import TodoForm from './components/UI/TodoForm';
 import Todo from './components/TODO/Todo';
+import TodoComment from './components/UI/TodoComment';
 import './App.css';
 
 const TODO_LIST = [
@@ -29,7 +30,7 @@ const TODO_LIST = [
 
 function App() {
 
-  const [todo, setTodo] = useState(TODO_LIST);
+  const [todos, setTodo] = useState(TODO_LIST);
 
   const addTodoHandler = enteredTodo => {
     setTodo(prevTodo => {
@@ -39,10 +40,22 @@ function App() {
     });
   };
 
+  const deleteTodoHandler = (todoId) => {
+    setTodo(items => {
+      const updatedTodo = items.filter(todo => todo.id !== todoId);
+      return updatedTodo;
+    })
+  }
+
+  const deleteAllTodosHandler = () => {
+    setTodo([]);
+  }
+
   return (
     <div className="App">
       <TodoForm onAddTodo={addTodoHandler} />
-      <Todo todo={todo} />
+      <Todo todo={todos} onDeleteTodo={deleteTodoHandler} />
+      <TodoComment onDeleteAll={deleteAllTodosHandler} />
     </div>
   );
 }

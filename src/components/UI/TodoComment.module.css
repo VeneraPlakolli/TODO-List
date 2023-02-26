@@ -1,0 +1,16 @@
+.todo-comment {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.todo-comment button {
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color:rgb(248, 119, 67);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
