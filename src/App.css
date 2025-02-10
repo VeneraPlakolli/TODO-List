@@ -45,3 +45,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+@media (max-width: 750px) {
+  .App {
+    width: 320px;
+  }
+}
